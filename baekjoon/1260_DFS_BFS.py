@@ -21,7 +21,7 @@ def bfs(v, graph):
     visited = set()
 
     while queue:
-        a = queue.pop()
+        a = queue.popleft()
 
         if a not in visited:
             print(a, end=" ")

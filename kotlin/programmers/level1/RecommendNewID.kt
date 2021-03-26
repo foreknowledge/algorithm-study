@@ -1,32 +1,18 @@
 package programmers
 
-import java.lang.StringBuilder
-
 class RecommendNewID {
     fun solution(new_id: String): String {
-        val level1 = StringBuilder()
-
-        for (a in new_id.toLowerCase()) {
-            // 1,2단계
-            if (a in 'a'..'z' || a.isDigit() || a == '-' || a == '_' || a == '.') {
-                level1.append(a)
-            }
-        }
-
-        val level4 = level1.split(".")
-                .filter { it.isNotEmpty() }
-                .joinToString(".")
-
-        val level5 = if (level4.isEmpty()) "a" else level4
-
-        val level6 = if (level5.length > 15) {
-            val result = level5.substring(0, 15)
-            if (result.last() == '.') result.dropLast(1) else result
-        } else level5
-
-        return if (level6.length < 3) {
-            level6 + level6.last().toString().repeat(3 - level6.length)
-        } else level6
+        return new_id.toLowerCase()
+                .filter { it.isLowerCase() || it.isDigit() || it == '-' || it == '_' || it == '.' }
+                .split(".").filter { it.isNotEmpty() }.joinToString(".")
+                .let { if (it.isEmpty()) "a" else it }
+                .let { if (it.length > 15) it.substring(0, 15) else it }
+                .let { if (it.last() == '.') it.dropLast(1) else it }
+                .let {
+                    if (it.length < 3) {
+                        it + it.last().toString().repeat(3 - it.length)
+                    } else it
+                }
     }
 }
 

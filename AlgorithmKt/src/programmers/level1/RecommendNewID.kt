@@ -1,4 +1,4 @@
-package programmers
+package programmers.level1
 
 class RecommendNewID {
     fun solution(new_id: String): String {

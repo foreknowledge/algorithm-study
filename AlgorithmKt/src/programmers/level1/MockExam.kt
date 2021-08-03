@@ -1,4 +1,4 @@
-package programmers
+package programmers.level1
 
 class MockExam {
     fun solution(answers: IntArray): IntArray {

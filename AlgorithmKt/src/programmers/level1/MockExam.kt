@@ -16,12 +16,12 @@ class MockExam {
         }
 
         val scoreArr = intArrayOf(score1, score2, score3)
-        val maxScore = scoreArr.max()
+        val maxScore = scoreArr.maxOrNull()
 
         val answer = mutableListOf<Int>()
         for ((i, s) in scoreArr.withIndex()) {
             if (s == maxScore)
-                answer.add(i + 1)
+                answer += i + 1
         }
 
         return answer.toIntArray()

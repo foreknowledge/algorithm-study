@@ -17,11 +17,10 @@ class RecommendNewID {
 }
 
 fun main() {
-    val recommendNewID = RecommendNewID()
-
-    println(recommendNewID.solution("...!@BaT#*..y.abcdefghijklm"))
-    println(recommendNewID.solution("z-+.^."))
-    println(recommendNewID.solution("=.="))
-    println(recommendNewID.solution("123_.def"))
-    println(recommendNewID.solution("abcdefghijklmn.p"))
+    val recommendNewId = RecommendNewID()
+    println(recommendNewId.solution("...!@BaT#*..y.abcdefghijklm"))
+    println(recommendNewId.solution("z-+.^."))
+    println(recommendNewId.solution("=.="))
+    println(recommendNewId.solution("123_.def"))
+    println(recommendNewId.solution("abcdefghijklmn.p"))
 }

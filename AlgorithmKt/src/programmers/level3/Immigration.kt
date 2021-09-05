@@ -1,5 +1,8 @@
 package programmers.level3
 
+/**
+ * 답안 참고
+ */
 class Immigration {
     fun solution(n: Int, times: IntArray): Long {
         var min = 1L

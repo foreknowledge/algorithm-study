@@ -1,5 +1,8 @@
 package programmers.level3
 
+/**
+ * 답안 참고
+ */
 class ExpressAsN {
     fun solution(N: Int, number: Int): Int {
         val results = (1..8).map {

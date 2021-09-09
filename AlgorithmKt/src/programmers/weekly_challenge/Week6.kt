@@ -12,7 +12,6 @@ class Week6First {
             val winHeavier = results.filterIndexed { j, result -> weights[i] < weights[j] && result == 'W' }.count()
             result += Record(i + 1, winRate, winHeavier, weights[i])
         }
-        result.forEach { println(it) }
 
         return result.sortedByDescending { it.player }
                 .sortedBy { it.weight }

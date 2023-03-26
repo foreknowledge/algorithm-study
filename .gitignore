@@ -1,5 +1,6 @@
 .DS_Store
 .idea/
+.vscode/
 AlgorithmKt/src/practice
 AlgorithmKt/out
 python/practice

@@ -16,6 +16,18 @@ class Solution:
         return result
 
 
+# Solution2. 문법 축약 버전
+class Solution2:
+    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        return (
+            self.inorderTraversal(root.left)
+            + [root.val]
+            + self.inorderTraversal(root.right)
+            if root
+            else []
+        )
+
+
 print(Solution().inorderTraversal(array_to_tree([1, None, 2, 3])))
 print(Solution().inorderTraversal(array_to_tree([])))
 print(Solution().inorderTraversal(array_to_tree([1])))

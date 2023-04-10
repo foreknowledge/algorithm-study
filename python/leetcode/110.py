@@ -26,9 +26,31 @@ class Solution:
         return balanced
 
 
-print(Solution().isBalanced(str_array_to_tree("[3,9,20,null,null,15,7]")))
-print(Solution().isBalanced(str_array_to_tree("[1,2,2,3,3,null,null,4,4]")))
-print(Solution().isBalanced(str_array_to_tree("[]")))
-print(Solution().isBalanced(str_array_to_tree("[1,null,2,null,3]")))
-print(Solution().isBalanced(str_array_to_tree("[1, 2, 3, 4, null, 5]")))
-print(Solution().isBalanced(str_array_to_tree("[1, 2, 3, 4, null, 5, null, 6]")))
+class Solution2:
+    def isBalanced(self, root: Optional[TreeNode]) -> bool:
+        return self.nodeHeight(root) >= 0
+
+    # node의 height (balanced가 아니면 -1)
+    def nodeHeight(self, node: Optional[TreeNode]) -> int:
+        if not node:
+            return 0
+
+        lh = self.nodeHeight(node.left)
+        if lh < 0:
+            return -1
+
+        rh = self.nodeHeight(node.right)
+        if rh < 0:
+            return -1
+
+        if abs(lh - rh) > 1:
+            return -1
+        return max(lh, rh) + 1
+
+
+print(Solution2().isBalanced(str_array_to_tree("[3,9,20,null,null,15,7]")))
+print(Solution2().isBalanced(str_array_to_tree("[1,2,2,3,3,null,null,4,4]")))
+print(Solution2().isBalanced(str_array_to_tree("[]")))
+print(Solution2().isBalanced(str_array_to_tree("[1,null,2,null,3]")))
+print(Solution2().isBalanced(str_array_to_tree("[1, 2, 3, 4, null, 5]")))
+print(Solution2().isBalanced(str_array_to_tree("[1, 2, 3, 4, null, 5, null, 6]")))

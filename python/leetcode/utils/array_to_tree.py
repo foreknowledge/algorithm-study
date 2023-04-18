@@ -34,3 +34,38 @@ def array_to_tree(arr):
         i += 1
 
     return root
+
+
+def tree_to_str_array(root: TreeNode):
+    arr = tree_to_array(root)
+    result = ''
+    for val in arr:
+        if val is not None:
+            result += str(val)
+        else:
+            result += 'null'
+        result += ','
+    return '[' + result[:-1] + ']'
+
+
+def tree_to_array(root: TreeNode) -> List[str]:
+    if not root:
+        return []
+
+    queue = [root]
+    result = []
+
+    while queue:
+        node = queue.pop(0)
+        if node:
+            result.append(node.val)
+            queue.append(node.left)
+            queue.append(node.right)
+        else:
+            result.append(None)
+
+    # Remove the trailing 'null' values
+    while result and result[-1] == None:
+        result.pop()
+
+    return result

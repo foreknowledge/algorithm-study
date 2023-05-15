@@ -1,5 +1,8 @@
-class Solution(object):
-    def findMin(self, nums):
+from typing import *
+
+
+class Solution:
+    def findMin(self, nums: List[int]) -> int:
         N = len(nums)
         l, r = 0, N-1
 
@@ -28,8 +31,8 @@ class Solution(object):
         return nums[0]
 
 
-class Solution2(object):
-    def findMin(self, nums):
+class Solution2:
+    def findMin(self, nums: List[int]) -> int:
         l, r = 0, len(nums)-1
 
         while l < r:

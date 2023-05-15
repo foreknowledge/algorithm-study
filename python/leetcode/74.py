@@ -1,5 +1,8 @@
-class Solution(object):
-    def searchMatrix(self, matrix, target):
+from typing import *
+
+
+class Solution:
+    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
         m, n = len(matrix), len(matrix[0])
 
         t, d = 0, m-1

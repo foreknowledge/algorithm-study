@@ -1,5 +1,8 @@
-class Solution(object):
-    def searchInsert(self, nums, target):
+from typing import *
+
+
+class Solution:
+    def searchInsert(self, nums: List[int], target: int) -> int:
         l, r = 0, len(nums)-1
 
         while l <= r:

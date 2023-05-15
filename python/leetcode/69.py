@@ -1,5 +1,5 @@
-class Solution(object):
-    def mySqrt(self, x):
+class Solution:
+    def mySqrt(self, x: int) -> int:
         l, r = 0, x
 
         while l <= r:

@@ -1,5 +1,8 @@
-class Solution(object):
-    def search(self, nums, target):
+from typing import *
+
+
+class Solution:
+    def search(self, nums: List[int], target: int) -> bool:
         pivot = 0
         for i in range(1, len(nums)):
             if nums[i-1] > nums[i]:
@@ -25,7 +28,7 @@ class Solution(object):
 
 
 class Solution2:
-    def search(self, nums, target):
+    def search(self, nums: List[int], target: int) -> bool:
         l, r = 0, len(nums)-1
         while l <= r:
             while l < len(nums)-1 and nums[l] == nums[l+1]:

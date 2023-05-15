@@ -28,9 +28,23 @@ class Solution(object):
         return nums[0]
 
 
-print(Solution().findMin([1, 3, 5]))
-print(Solution().findMin([2, 2, 2, 0, 1]))
-print(Solution().findMin([2, 2, 2, 2, 2]))
-print(Solution().findMin([2, 2, 2, 1, 2]))
-print(Solution().findMin(
+class Solution2(object):
+    def findMin(self, nums):
+        l, r = 0, len(nums)-1
+
+        while l < r:
+            mid = (l+r)//2
+            if nums[mid] > nums[r]:
+                l = mid+1
+            else:
+                r = mid if nums[mid] != nums[r] else r-1
+
+        return nums[l]
+
+
+print(Solution2().findMin([1, 3, 5]))
+print(Solution2().findMin([2, 2, 2, 0, 1]))
+print(Solution2().findMin([2, 2, 2, 2, 2]))
+print(Solution2().findMin([2, 2, 2, 1, 2]))
+print(Solution2().findMin(
     [5, 5, 5, 5, 1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 5, 5, 5]))

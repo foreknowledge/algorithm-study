@@ -14,5 +14,14 @@ class Solution:
         return rows
 
 
+class Solution2:
+    def generate(self, numRows: int) -> List[List[int]]:
+        rows = [[1]]
+        for i in range(1, numRows):
+            rows.append([x + y for x, y in zip([0]+rows[i-1], rows[i-1]+[0])])
+        return rows
+
+
 print(Solution().generate(5))
+print(Solution2().generate(5))
 print(Solution().generate(1))
